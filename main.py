@@ -102,6 +102,8 @@ def main():
             seconds = diff % 60
             days = hours / 24
 
+            print(system)
+
             print(Fore.WHITE + "-----------------------------------------------")
             print(Fore.GREEN + "Available : " + str(system['dataaccounts']['total']))
             print(Fore.WHITE + "-----------------------------------------------")
@@ -109,14 +111,12 @@ def main():
             print(Fore.YELLOW + "Timestamp : " + str(timestamp))
             print(Fore.YELLOW + "End Timestamp : " + str(timestamp_end))
             print(Fore.YELLOW + "Count Down : "+ str(int(days)) + "days : "  + str(int(hours)) + "h : " + str(int(minutes)) + "m : " + str(int(seconds)) + 's')
-            if(timestamp > timestamp_end):
-                print("ถึงเวลากดแล้ว")
-                print(system['dataconfigs'])
-                if(system['dataconfigs'][0]['Btnnetflix'] == '1'):
-                    response = CMUObject.getNetflix(cmu_account)
-                    if(response.statusCode == 200):
-                        print("รับ Netflix สำเร็จ!")
-                    break
+            if(system['dataconfigs'][0]["Btnnetflix"] == '1'):
+                print("กดปุ่มได้แล้ว")
+                response = CMUObject.getNetflix(cmu_account)
+                if(response.statusCode == 200):
+                    print("รับ Netflix สำเร็จ!")
+                break
             else:
                 print(Fore.CYAN + "Waiting....")
             time.sleep(0.5)
