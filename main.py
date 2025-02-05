@@ -17,9 +17,21 @@
 
 # https://app.scmc.cmu.ac.th/api/v2/history_scan
 
+# !Important TOKEN[LIBRARY TOKEN]
+# https://services.library.cmu.ac.th/moviestreaming/cmumobileacceptprivacy?token="YOUR CMU TOKEN"	GET PUT TOKEN
+# https://services.library.cmu.ac.th/moviestreaming/cmumobile?token=7d6tx2rWNScSwMKmQv0RYhvMXTD488cF //
+
+# Find your token with mitm
+
+# https://app.scmc.cmu.ac.th/api/app/29/goto?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6ODg1NDYsImlhdCI6MTcyMjIzNTQ3OH0.DEYg-aExybY3RksG5lSdwAOwJ3SuM5MfD3BXAd-OEDM it will redirect to library services with token
+
 uri_system = 'https://services.library.cmu.ac.th/moviestreaming/api/configs/checksystem'
 uri_account = 'https://services.library.cmu.ac.th/moviestreaming/api/account/checkaccount'
+uri_auth_phone = 'https://services.library.cmu.ac.th/moviestreaming/cmumobileacceptprivacy'
 uri_get_netflix ='https://services.library.cmu.ac.th/moviestreaming/api/account/getnetflix'
+
+MY_APP_CMU_TOKEN = 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6ODg1NDYsImlhdCI6MTcyMjIzNTQ3OH0.DEYg-aExybY3RksG5lSdwAOwJ3SuM5MfD3BXAd-OEDM'
+MY_LIB_CMU_TOKEN = ''
 
 import requests
 from datetime import datetime
@@ -58,7 +70,7 @@ class CMULibraryServices:
             "token": cmu_token
         }
 
-        response = requests.post(uri_get_netflix, json=payload)
+        response = requests.post(uri_auth_phone, params=payload['token'])
 
         return response.json()
         
@@ -85,7 +97,7 @@ def main():
 
         # end_timestamp = datetime.now().timestamp() + 5 # 5 sec after this will got netflix
 
-        collision_time = "01/01/2025 14:00:00"
+        collision_time = "02/05/2025 14:00:00"
         collision_time_object = datetime.strptime(collision_time, "%m/%d/%Y %H:%M:%S")
         timestamp_end = int(collision_time_object.timestamp())
 
@@ -113,13 +125,13 @@ def main():
             print(Fore.YELLOW + "Count Down : "+ str(int(days)) + "days : "  + str(int(hours)) + "h : " + str(int(minutes)) + "m : " + str(int(seconds)) + 's')
             if(system['dataconfigs'][0]["Btnnetflix"] == '1'):
                 print("กดปุ่มได้แล้ว")
-                response = CMUObject.getNetflix(cmu_account)
-                if(response.statusCode == 200):
-                    print("รับ Netflix สำเร็จ!")
-                break
+                # response = CMUObject.getNetflix(cmu_account)
+                # if(response.statusCode == 200):
+                #     print("รับ Netflix สำเร็จ!")
+                # break
             else:
                 print(Fore.CYAN + "Waiting....")
-            time.sleep(0.5)
+            time.sleep(0.1)
             if(log == True):
                 os.system("cls")
 
