@@ -125,10 +125,14 @@ def main():
             print(Fore.YELLOW + "Count Down : "+ str(int(days)) + "days : "  + str(int(hours)) + "h : " + str(int(minutes)) + "m : " + str(int(seconds)) + 's')
             if(system['dataconfigs'][0]["Btnnetflix"] == '1'):
                 print("กดปุ่มได้แล้ว")
-                # response = CMUObject.getNetflix(cmu_account)
-                # if(response.statusCode == 200):
-                #     print("รับ Netflix สำเร็จ!")
-                # break
+                # ใช้จริงต้องไม่ใช่ Token นี้ แต่เป็น LIB_Token
+                # อันนี้ทดลอง For Testing
+                CMUObject.getNetflix(cmu_token=cmu_account)
+                if(account_status['status']):
+                    print("รับ Netflix สำเร็จ!")
+                    print(account_status['data'][0]['EmailAddress'])
+                    print(account_status['data'][0]['Password'])
+                    break
             else:
                 print(Fore.CYAN + "Waiting....")
             time.sleep(0.1)
