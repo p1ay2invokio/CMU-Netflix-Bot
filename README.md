@@ -1,6 +1,6 @@
 # Worked!
 บอทกด Netflix Streaming Services ของมหาวิทยาลัยเชียงใหม่(ChiangMai University) WINRATE 100%<br/>
-```*ยังไม่เคยมีคนทำ```<br/>
+```*ยังไม่เคยมีคนทำ ใช้การแกะ API SERVICES ไม่ใช่ Auto Click หรือ Web Scrapping```<br/>
 รีสิทธิ์ทุกๆวัน พุธ 14.00 PM จำนวนจำกัด (101) สิทธิ์ <br/>
 
 1.เปิด CMD พิมพ์คำสั่ง py main.py<br/>
