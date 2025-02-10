@@ -7,3 +7,5 @@
 3.นำ CMU Token มากรอก ใน CMD จากนั้นรอจนถึงเวลาและจะได้รับทันที<br/>
 
 enjoy with your code
+
+![App Screenshot](IMG_1334.PNG)
