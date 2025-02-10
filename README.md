@@ -1,5 +1,5 @@
 # Worked!
-บอทกด Netflix Streaming Services ของมหาวิทยาลัยเชียงใหม่(ChiangMai University)
+บอทกด Netflix Streaming Services ของมหาวิทยาลัยเชียงใหม่(ChiangMai University) กดได้ Rate 100% *ยังไม่เคยมีคนทำ(คนแรก)
 รีสิทธิ์ทุกๆวัน พุธ 14.00 PM จำนวนจำกัด (101) สิทธิ์ <br/>
 
 1.เปิด CMD พิมพ์คำสั่ง py main.py<br/>
