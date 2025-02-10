@@ -6,6 +6,8 @@
 2.กรอก CMU Token *หาได้จากการทำ MITM PROXY แล้วดู network traffic ของ https://app.scmc.cmu.ac.th/api/v2/check-mobile-version GET headers: {Authorization: Bearer [YOUR TOKEN HERE!]}<br/>
 3.นำ CMU Token มากรอก ใน CMD จากนั้นรอจนถึงเวลาและจะได้รับทันที<br/>
 
+Copyright © 2025 รัฐนนท์ บุญมาตา (เพลย์ทู)
+
 enjoy with your code
 
 ![App Screenshot](IMG_1334.png)
