@@ -8,4 +8,4 @@
 
 enjoy with your code
 
-![App Screenshot](IMG_1334.PNG)
+![App Screenshot](IMG_1334.png)
